@@ -11,7 +11,7 @@
   background="resc/img/dar.jpeg" ;>
   <h1 id="taitou" align="center" style="font-size: 90px;">Hello!</h1>
   <h4>Welcome to the <b>Random Wee-Wee Ass Website!</b></h2><br>
-    This is, <em>quite literally</em>, a HTML file. Who'd have guessed?
+    This is, <em>quite literally</em>, a <u>HTML</u> file. Who'd have guessed?
     <!-- It's not lying though. -->
     <br><br>
     <textarea id="num">Type in JavaScript code...</textarea>
@@ -21,14 +21,11 @@
     <br><br>
     <button type="button" onclick="INSECURE()">Execute</button>
     <button type="button" onclick="pagemode()">SWITCH BETWEEN DARK MODE AND LIGHT MODE!!!!!!</button>
-    <script>
-      //This script is the dumbest thing i've ever seen. Don't actually do this, please.
-      function INSECURE() {
-        let final = 0
-        final = eval(document.getElementById('num').value)
-        document.getElementById('out').innerHTML = `${final}`
-      }
-    </script>
+    <button type="button" onclick="unhide()">I'm smart!</button>
+    <center id='rbmk' hidden>
+      You think you're smart? Check this out.<br>
+      <img src="resc/img/rbmk.png" width="40%" height="40%">
+    </center>
     <script>
       //This script is the dumbest thing i've ever seen. Don't actually do this, please.
       function pagemode() {
@@ -41,6 +38,14 @@
           document.body.background = "resc/img/ligh.webp"
           document.body.style.color = ('rgb(0,0,0)')
         }
+      }
+      function INSECURE() {
+        let final = 0
+        final = eval(document.getElementById('num').value)
+        document.getElementById('out').innerHTML = `${final}`
+      }
+      function unhide(){
+        document.getElementById('rbmk').removeAttribute('hidden')
       }
     </script>
 </body>
