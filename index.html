@@ -7,7 +7,7 @@
   <title>RWWAW</title>
 </head>
 
-<body style="font-family: Arial, Helvetica, sans-serif; color: aliceblue; background-color: rgb(35, 35, 35);";>
+<body style="font-family: Arial, Helvetica, sans-serif; color: aliceblue; ;" background="resc/img/dar.jpeg" ;>
   <h1 id="taitou">Hello!</h1>
   <h4>Welcome to the <b>Random Wee-Wee Ass Website!</b></h2><br>
     This is, <i>quite literally</i>, a HTML file. Who'd have guessed?
@@ -15,7 +15,11 @@
     <br>
     <br>
     <textarea id="num">Type in JavaScript code...</textarea>
-    <p id="out">Output goes here.</p>
+    <br>
+    <br>
+    <b id="out" style="color: brown; font-family: monospace; font-size: large;">Output goes here.</b>
+    <br>
+    <br>
     <button type="button" onclick="INSECURE()">Execute</button>
     <button type="button" onclick="pagemode()">SWITCH BETWEEN DARK MODE AND LIGHT MODE!!!!!!</button>
     <script>
@@ -30,15 +34,14 @@
     <script>
       //This script is the dumbest thing i've ever seen. Don't actually do this, please.
       function pagemode() {
-        if(document.body.style.backgroundColor==('rgb(255, 255, 255)')){
-          document.body.style.backgroundColor=('rgb(35, 35, 35)')
-          document.body.style.color=('rgb(255, 255, 255)')
-          console.log(document.body.style.backgroundColor)
+        if (document.body.background == "resc/img/ligh.webp") {
+          document.body.style.color = ('rgb(255, 255, 255)')
+          document.body.background = "resc/img/dar.jpeg"
+          console.log(document.body.background)
         }
-        else{
-          document.body.style.backgroundColor=('rgb(255,255,255)')
-          document.body.style.color=('rgb(0,0,0)')
-          console.log(document.body.style.backgroundColor)
+        else {
+          document.body.background = "resc/img/ligh.webp"
+          document.body.style.color = ('rgb(0,0,0)')
         }
       }
     </script>
