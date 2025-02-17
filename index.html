@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RWWAW</title>
 </head>
-<body style="font-family: Arial, Helvetica, sans-serif;">
-  <h1>Hello!</h1>
+
+<body style="font-family: Arial, Helvetica, sans-serif; color: aliceblue;"; background="resc/img/VD6nAYt.jpeg";>
+  <h1 id="taitou">Hello!</h1>
   <h4>Welcome to the <b>Random Wee-Wee Ass Website!</b></h2><br>
-  <br>
-  This is, <i>quite literally</i>, a HTML file. Who'd have guessed?
+    This is, <i>quite literally</i>, a HTML file. Who'd have guessed?
+    <br>
+    <br>
+    <textarea id="num">Type in JavaScript code...</textarea>
+    <p id="out">Output goes here.</p>
+    <button type="button" onclick="simpleMeth()">Execute</button>
+    <script>
+      function simpleMeth() {
+        let final = 0
+        final = eval(document.getElementById('num').value)
+        document.getElementById('out').innerHTML = `${final}`
+      }
+    </script>
 </body>
+
 </html>
