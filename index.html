@@ -19,9 +19,9 @@
     <strong id="out" style="color: rgb(255, 255, 255); font-family: monospace; font-size: larger;">Output goes
       here.</strong>
     <br><br>
-    <button type="button" onclick="INSECURE()">Execute</button>
-    <button type="button" onclick="pagemode()">SWITCH BETWEEN DARK MODE AND LIGHT MODE!!!!!!</button>
-    <button type="button" onclick="unhide()">I'm smart!</button>
+    <button type="button" onclick="INSECURE()">Execute</button><br>
+    <button type="button" onclick="pagemode()">SWITCH BETWEEN DARK MODE AND LIGHT MODE!!!!!!</button><br>
+    <button type="button" onclick="togglehidden('rbmk')">I'm smart!</button>
     <center id='rbmk' hidden>
       You think you're smart? Check this out.<br>
       <img src="resc/img/rbmk.png" width="40%" height="40%">
@@ -44,8 +44,13 @@
         final = eval(document.getElementById('num').value)
         document.getElementById('out').innerHTML = `${final}`
       }
-      function unhide(){
-        document.getElementById('rbmk').removeAttribute('hidden')
+      function togglehidden(name){
+        if(document.getElementById(name).getAttribute("hidden") != null){
+          document.getElementById(name).removeAttribute('hidden')
+        }
+        else{
+          document.getElementById(name).setAttribute('hidden', "")
+        }
       }
     </script>
 </body>
