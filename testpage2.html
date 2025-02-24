@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RWWAW Test Page</title>
 </head>
 <header style="background: rgb(47, 47, 47); color: aliceblue;">
-  <b>RWWAW</b> // <a href="index.html" style="color: aliceblue;">Main Page</a> // <a href="testpage2.html" style="color: aliceblue;">Test Page</a>
+  <b>RWWAW</b> // <a href="index.html" style="color: aliceblue;">Main Page</a> // <a href="testpage2.html"
+    style="color: aliceblue;">Test Page</a>
 </header>
-<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: rgb(47, 47, 47); color: aliceblue;">
+
+<body
+  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: rgb(47, 47, 47); color: aliceblue;"
+  onload="javascript:DynaLoad()">
   <br>
   <table border="1">
-      <tr>
-        <th>Website</th>
-        <th>Go-To Link</th>
-      </tr>
-      <tr align="center">
-        <td>The Wall of Piss</td>
-        <td><a href="https://thewallofpiss.duckdns.org" style="color: aliceblue;">TWOP</a></td>
-      </tr>
-      <tr align="center">
-        <td>JavaScript Documentation</td>
-        <td><a href="https://devdocs.io/javascript/" style="color: aliceblue;">JS Docs</a></td>
-      </tr>
-      <tr align="center">
-        <td>Official Russian Government Website</td>
-        <td><a href="https://government.ru/en/" style="color: aliceblue;">RUS Gov</a></td>
-      </tr>
+    <tr>
+      <th>Website</th>
+      <th>Go-To Link</th>
+    </tr>
+    <tr align="center">
+      <td>The Wall of Piss</td>
+      <td><a href="https://thewallofpiss.duckdns.org" style="color: aliceblue;">TWOP</a></td>
+    </tr>
+    <tr align="center">
+      <td>JavaScript Documentation</td>
+      <td><a href="https://devdocs.io/javascript/" style="color: aliceblue;">JS Docs</a></td>
+    </tr>
+    <tr align="center">
+      <td>Official Russian Government Website</td>
+      <td><a href="https://government.ru/en/" style="color: aliceblue;">RUS Gov</a></td>
+    </tr>
   </table>
   <br>
   <ol>
@@ -43,5 +48,38 @@
     <li>REALLY? BRAINFUCK?????? GO SEEK SOMETHING BETTER TO DO!</li>
     <li>Who uses P#?</li>
   </ul>
+  <br>DynaTable!
+  <table id="dynatable" border="1">
+    <tr>
+      <th>Cell Name</th>
+      <th>Cell Content</th>
+    </tr>
+  </table>  
+  <br>
+  <iframe src="https://thewallofpiss.duckdns.org" frameborder="0" width="60%" height="50%"></iframe>
 </body>
+<script>
+  getJSON('dynalist.json', function(json){
+    console.log(json)
+  })
+  function DynaLoad(){
+    console.log('test')
+    //DynaTable Script? It tries to inject FIVE rows of items in the DynaTable, each with their own IDs.
+    //IT WORKS!!!!! Now i gotta integrate it with a DynaTable JSON file to make the contents not be... that?
+    for (let i = 1; i<15; i++) {
+      const node = document.createElement('tr')
+      const td1 = document.createElement('td')
+      const td2 = document.createElement('td')
+      let num = document.createTextNode(i)
+      let cont = document.createTextNode(`This is Item #${i}`)
+      td1.appendChild(num)
+      td2.appendChild(cont)
+      node.appendChild(td1)
+      node.appendChild(td2)
+      document.getElementById("dynatable").appendChild(node)
+      console.log(i)
+    }
+  }
+</script>
+
 </html>

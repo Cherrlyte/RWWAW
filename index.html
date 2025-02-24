@@ -29,25 +29,24 @@
     <center id='rbmk' hidden>
       You think you're smart? Check this out.<br>
       <img src="resc/img/rbmk.png" width="40%" height="40%">
-    </center>
-    <script>
-      //This script is the dumbest thing i've ever seen. Don't actually do this, please.
-      function pagemode() {
-        if (document.body.background == "resc/img/ligh.webp") 
-        { document.body.style.color = ('rgb(255, 255, 255)'); document.body.background = "resc/img/dar.jpeg" }
-        else { document.body.background = "resc/img/ligh.webp"; document.body.style.color = ('rgb(0,0,0)') }
-      }
-      function INSECURE() {
-        let final = 0
-        final = eval(document.getElementById('num').value)
-        document.getElementById('out').innerHTML = `${final}`
-      }
-      function toggleHidden(name) {
-        if (document.getElementById(name).getAttribute("hidden") != null) 
-        { document.getElementById(name).removeAttribute('hidden') }
-        else { document.getElementById(name).setAttribute('hidden', "") }
-      }
-    </script>
+    </center>  
 </body>
-
+<script>
+  //This script is the dumbest thing i've ever seen. Don't actually do this, please.
+  function pagemode() {
+    if (document.body.background == "resc/img/ligh.webp") 
+    { document.body.style.color = ('rgb(255, 255, 255)'); document.body.background = "resc/img/dar.jpeg" }
+    else { document.body.background = "resc/img/ligh.webp"; document.body.style.color = ('rgb(0,0,0)') }
+  }
+  function INSECURE() {
+    let final = 0
+    final = eval(document.getElementById('num').value)
+    document.getElementById('out').innerHTML = `${final}`
+  }
+  function toggleHidden(name) {
+    if (document.getElementById(name).getAttribute("hidden") != null) 
+    { document.getElementById(name).removeAttribute('hidden') }
+    else { document.getElementById(name).setAttribute('hidden', "") }
+  }
+</script>
 </html>
