@@ -7,6 +7,10 @@
   <title>RWWAW</title>
 </head>
 
+<header>
+  <b>RWWAW</b> // <a href="index.html">Main Page</a> // <a href="testpage2.html">Test Page</a>
+</header>
+
 <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: aliceblue; ;"
   background="resc/img/dar.jpeg" ;>
   <h1 id="taitou" align="center" style="font-size: 90px;">Hello!</h1>
@@ -21,7 +25,7 @@
     <br><br>
     <button type="button" onclick="INSECURE()">Execute</button><br>
     <button type="button" onclick="pagemode()">SWITCH BETWEEN DARK MODE AND LIGHT MODE!!!!!!</button><br>
-    <button type="button" onclick="togglehidden('rbmk')">I'm smart!</button>
+    <button type="button" onclick="toggleHidden('rbmk')">I'm smart!</button>
     <center id='rbmk' hidden>
       You think you're smart? Check this out.<br>
       <img src="resc/img/rbmk.png" width="40%" height="40%">
@@ -29,28 +33,19 @@
     <script>
       //This script is the dumbest thing i've ever seen. Don't actually do this, please.
       function pagemode() {
-        if (document.body.background == "resc/img/ligh.webp") {
-          document.body.style.color = ('rgb(255, 255, 255)')
-          document.body.background = "resc/img/dar.jpeg"
-          console.log(document.body.background)
-        }
-        else {
-          document.body.background = "resc/img/ligh.webp"
-          document.body.style.color = ('rgb(0,0,0)')
-        }
+        if (document.body.background == "resc/img/ligh.webp") 
+        { document.body.style.color = ('rgb(255, 255, 255)'); document.body.background = "resc/img/dar.jpeg" }
+        else { document.body.background = "resc/img/ligh.webp"; document.body.style.color = ('rgb(0,0,0)') }
       }
       function INSECURE() {
         let final = 0
         final = eval(document.getElementById('num').value)
         document.getElementById('out').innerHTML = `${final}`
       }
-      function togglehidden(name){
-        if(document.getElementById(name).getAttribute("hidden") != null){
-          document.getElementById(name).removeAttribute('hidden')
-        }
-        else{
-          document.getElementById(name).setAttribute('hidden', "")
-        }
+      function toggleHidden(name) {
+        if (document.getElementById(name).getAttribute("hidden") != null) 
+        { document.getElementById(name).removeAttribute('hidden') }
+        else { document.getElementById(name).setAttribute('hidden', "") }
       }
     </script>
 </body>
