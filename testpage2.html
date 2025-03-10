@@ -7,7 +7,7 @@
   <title>RWWAW Test Page</title>
 </head>
 <header style="background: rgb(47, 47, 47); color: aliceblue;">
-  <b>RWWAW</b> // <a href="index.html" style="color: aliceblue;">Main Page</a> // <a href="testpage2.html"
+  <b style="font-size: 40px;">RWWAW</b> // <a href="index.html" style="color: aliceblue;">Main Page</a> // <a href="testpage2.html"
     style="color: aliceblue;">Test Page</a>
 </header>
 
@@ -59,25 +59,22 @@
   <iframe src="https://thewallofpiss.duckdns.org" frameborder="0" width="60%" height="50%"></iframe>
 </body>
 <script>
-  getJSON('dynalist.json', function(json){
-    console.log(json)
-  })
-  function DynaLoad(){
+  async function DynaLoad(){
     console.log('test')
-    //DynaTable Script? It tries to inject FIVE rows of items in the DynaTable, each with their own IDs.
-    //IT WORKS!!!!! Now i gotta integrate it with a DynaTable JSON file to make the contents not be... that?
-    for (let i = 1; i<15; i++) {
+    let thejson; const res = await fetch('./dynatable.json'); thejson = await res.json()
+    //DynaTable Script? It reads from the "dynatable.json" file, gets the values and throws it into the table.
+    //IT WORKS!!!!! NOW I CAN FINALLY REST IN PEACE!
+    for (i in thejson) {
       const node = document.createElement('tr')
       const td1 = document.createElement('td')
       const td2 = document.createElement('td')
       let num = document.createTextNode(i)
-      let cont = document.createTextNode(`This is Item #${i}`)
+      let cont = document.createTextNode(thejson[i])
       td1.appendChild(num)
       td2.appendChild(cont)
       node.appendChild(td1)
       node.appendChild(td2)
       document.getElementById("dynatable").appendChild(node)
-      console.log(i)
     }
   }
 </script>
