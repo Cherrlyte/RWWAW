@@ -8,14 +8,17 @@
   <link rel="stylesheet" href="resc/css/main.css">
 </head>
 
-<header>
+<header id="navbar">
   <b style="font-size: 40px;">RWWAW</b> // <a href="index.html">Main Page</a> // <a href="testpage2.html">Test Page</a>
 </header>
 
-<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: aliceblue; ;"
-  background="resc/img/dar.jpeg" ;>
+<body>
   <h1 id="taitou" align="center" style="font-size: 90px;">Hello!</h1>
-  <h4>Welcome to the <b>Random Wee-Wee Ass Website!</b></h2><br>
+  <aside id='rbmk' hidden>
+    You think you're smart? Check this out.<br>
+    <img src="resc/img/rbmk.png" width="40%" height="40%">
+  </aside>
+  <h4>Welcome to the <b>Random Wee-Wee Ass Website!</b></h2>
     This is, <em>quite literally</em>, a <u>HTML</u> file. Who'd have guessed?
     <!-- It's not lying though. -->
     <br><br>
@@ -24,21 +27,18 @@
     <strong id="out" style="color: rgb(255, 255, 255); font-family: monospace; font-size: larger;">Output goes
       here.</strong>
     <br><br>
-    <button type="button" onclick="INSECURE()">Execute</button><br>
-    <button type="button" onclick="pagemode()">SWITCH BETWEEN DARK MODE AND LIGHT MODE!!!!!!</button><br>
-    <button type="button" onclick="toggleHidden('rbmk')">I'm smart!</button>
-    <center id='rbmk' hidden>
-      You think you're smart? Check this out.<br>
-      <img src="resc/img/rbmk.png" width="40%" height="40%">
-    </center>  
+    <div id="buttonbox">
+      <button type="button" onclick="INSECURE()">Execute</button><br>
+      <button type="button" onclick="pagemode()">Dark Mode Toggle</button><br>
+      <button type="button" onclick="toggleHidden('rbmk')">I'm smart!</button>
+    </div>
 </body>
 
 <script>
   //This script is the dumbest thing i've ever seen. Don't actually do this, please.
   function pagemode() {
-    if (document.body.background == "resc/img/ligh.webp") 
-    { document.body.style.color = ('rgb(255, 255, 255)'); document.body.background = "resc/img/dar.jpeg" }
-    else { document.body.background = "resc/img/ligh.webp"; document.body.style.color = ('rgb(0,0,0)') }
+    document.body.classList.toggle('dark-mode');
+    document.getElementById("navbar").classList.toggle('dark-mode');
   }
   function INSECURE() {
     let final = 0
@@ -46,8 +46,7 @@
     document.getElementById('out').innerHTML = `${final}`
   }
   function toggleHidden(name) {
-    if (document.getElementById(name).getAttribute("hidden") != null) 
-    { document.getElementById(name).removeAttribute('hidden') }
+    if (document.getElementById(name).getAttribute("hidden") != null) { document.getElementById(name).removeAttribute('hidden') }
     else { document.getElementById(name).setAttribute('hidden', "") }
   }
 </script>
